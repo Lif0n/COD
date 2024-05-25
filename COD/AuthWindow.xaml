@@ -21,6 +21,7 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" FontSize="15" Content="Эл. почта"/>
         <Label Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" FontSize="15" Content="Пароль"/>
+        <Label Content="Авторизация" FontWeight="Bold" FontSize="20" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox Grid.Row="1" x:Name="Email" Grid.Column="1" VerticalAlignment="Center" Padding="0 15"/>
         <PasswordBox Grid.Row="2" x:Name="Password" Grid.Column="1" VerticalAlignment="Center" Padding="0 15"/>
         <Button Grid.Row="3" x:Name="LogInButton" Click="LogInButton_Click" Grid.Column="1" VerticalAlignment="Center" Content="Войти" Padding="0 15" FontWeight="Bold" FontSize="15"/>
