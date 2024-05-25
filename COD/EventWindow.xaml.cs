@@ -20,10 +20,26 @@ namespace COD
     /// </summary>
     public partial class EventWindow : Window
     {
-        public EventWindow(Event @event)
+        Context _context;
+        Event _event;
+        public EventWindow( Event @event )
         {
+            _context = new Context();
+            _event = @event;
             InitializeComponent();
-            NameText.Text = @event.Name;
+            NameTextBox.Text = @event.Name;
+            DateEvent.SelectedDate = @event.Date.Date;
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Вы уверены, что хотите удалить эту хуйню?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                _context.Events.Remove(_event);
+                _context.SaveChanges();
+                this.DialogResult = true;
+                this.Close();
+            }
         }
     }
 }

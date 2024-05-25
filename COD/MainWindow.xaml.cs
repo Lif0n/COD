@@ -40,7 +40,12 @@ namespace COD
         private void EventsList_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             EventWindow EW = new EventWindow(EventsList.SelectedValue as Event);
-            EW.Show();
+            EW.ShowDialog();
+            if ((bool)EW.DialogResult == true)
+            {
+                EventsList.ItemsSource = _context.Events.ToList();
+            }
+            
         }
     }
 }
