@@ -15,6 +15,7 @@ namespace COD
            "User ID=user05;Password=05;TrustServerCertificate=True";*/
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Event> Events { get; set; }
 
