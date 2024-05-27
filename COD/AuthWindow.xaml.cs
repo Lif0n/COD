@@ -27,11 +27,11 @@ namespace COD
         {
             if (context.Users.FirstOrDefault(u => u.Email == Email.Text && u.Password == Password.Password) == null)
             {
-                MessageBox.Show("Мудак?");
+                MessageBox.Show("Пользователя с такими данными не найдено?");
             }
             else
             {
-                MainWindow MW = new MainWindow();
+                MainWindow MW = new MainWindow(context.Users.FirstOrDefault(u => u.Email == Email.Text && u.Password == Password.Password));
                 MW.Show();
                 this.Close();
             }

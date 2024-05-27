@@ -33,25 +33,26 @@ namespace COD
         }
 
         //проверка полей
-        public bool RegCheck()
+        public bool RegCheck(string name, string govno, string password, string passwordConfirm)
         {
+
             //проверка полей на пустоту
-            if (string.IsNullOrEmpty(Name.Text)
-                || string.IsNullOrEmpty(Govno.Text)
-                || string.IsNullOrEmpty(Password.Password)
-                || string.IsNullOrEmpty(PasswordConfirm.Password)
+            if (string.IsNullOrEmpty(name)
+                || string.IsNullOrEmpty(govno)
+                || string.IsNullOrEmpty(password)
+                || string.IsNullOrEmpty(passwordConfirm)
                 || Role.SelectedValue == null)
             {
                 MessageBox.Show("Проверьте заполненны ли все поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             //проверка паролей на совпадение
-            if (Password.Password != PasswordConfirm.Password)
+            if (password != passwordConfirm)
             {
                 MessageBox.Show("Пароли не совпадают", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (Regex.IsMatch(Name.Text, @"[a-zA-Z]|\s|\d|\W") && Regex.IsMatch(Name.Text, @"[a-zA-Z]|\s|\d|\W"))
+            if (Regex.IsMatch(name, @"[a-zA-Z]|\s|\d|\W") && Regex.IsMatch(govno, @"[a-zA-Z]|\s|\d|\W"))
             {
                 MessageBox.Show("Имя и говно должны состоять только из букв кириллицы", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -62,8 +63,11 @@ namespace COD
 
         private void RegistrationButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Role.SelectedValue.ToString());
-            if (RegCheck())
+            string name = Name.Text;
+            string govno = Govno.Text;
+            string password = Password.Password;
+            string passwordConfirm = PasswordConfirm.Password;
+            if (RegCheck(name, govno, password, passwordConfirm))
             {
                 MessageBox.Show("Molodec");
             }

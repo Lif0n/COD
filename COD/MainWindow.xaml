@@ -13,6 +13,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button x:Name="LogoutButton" Click="LogoutButton_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Выход" FontWeight="Bold" FontSize="15" Padding="5" Margin="5 0"/>
+        <Button x:Name="ProfileButton" Click="ProfileButton_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Профиль" FontWeight="Bold" FontSize="15" Padding="5" Margin="5 0"/>
         <ListBox x:Name="EventsList" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" HorizontalContentAlignment="Stretch" Padding="30 0" MouseLeftButtonUp="EventsList_MouseLeftButtonUp">
             <ListBox.ItemTemplate>
                 <DataTemplate>

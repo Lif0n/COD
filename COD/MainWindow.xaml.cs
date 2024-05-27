@@ -20,10 +20,11 @@ namespace COD
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        User _user;
         Context _context;
-        public MainWindow()
+        public MainWindow(User user)
         {
+            _user = user;
             InitializeComponent();
             _context = new Context();
             //EventsList.DataContext = _context.Events.ToList();
@@ -46,6 +47,13 @@ namespace COD
                 EventsList.ItemsSource = _context.Events.ToList();
             }
             
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProfileWindow PW = new ProfileWindow(_user);
+
+            PW.ShowDialog();
         }
     }
 }
