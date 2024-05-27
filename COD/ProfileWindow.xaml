@@ -27,6 +27,6 @@
         <TextBox x:Name="Surname" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" FontSize="15"/>
         <DatePicker x:Name="Birthday" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" FontWeight="Bold" FontSize="15"/>
 
-        <Button Grid.Row="4" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Сохранить изменения" FontWeight="Bold" FontSize="15" Padding="15"/>
+        <Button x:Name="SaveChanges" Click="SaveChanges_Click" Grid.Row="4" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Сохранить изменения" FontWeight="Bold" FontSize="15" Padding="15"/>
     </Grid>
 </Window>

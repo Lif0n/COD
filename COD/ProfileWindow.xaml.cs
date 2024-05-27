@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -46,8 +47,22 @@ namespace COD
             if (Birthday.SelectedDate >= DateTime.Today)
             {
                 MessageBox.Show("Ты как в будущем родился, дебик", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if (!Regex.IsMatch(Surname.Text, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
+            {
+                MessageBox.Show("Проверьте правильность заполнения электронной почты", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
             }
             return true;
+        }
+
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckData())
+            {
+                MessageBox.Show("Krasava");
+            }
         }
     }
 }
